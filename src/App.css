@@ -9,30 +9,75 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation-name: App-logo-enter;
+    animation-iteration-count: 1, 0, infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #212121;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(200, 200, 200);
 }
 
 .App-link {
-  color: #61dafb;
+  color: #007e17;
+  transition: all 0.2s;
 }
 
-@keyframes App-logo-spin {
+.App-link:hover {
+  color: #004396;
+}
+
+@keyframes App-logo-enter {
   from {
-    transform: rotate(0deg);
+    transform: translate(200%, 0) scale(2, 2) rotate(0.5turn);
   }
+
   to {
-    transform: rotate(360deg);
+    transform: translate(0, 0) scale(1, 1);
   }
+}
+
+.App-scroll-down-img {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App-resume-section {
+  background-color: #8e8e8e;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'leftcol rightcol';
+  gap: 10px;
+  padding: 10px;
+  font-size: calc(10px + 2vmin);
+  color: rgb(35, 35, 35);
+}
+
+.header {
+  grid-area: header;
+}
+
+.leftcol {
+  grid-area: leftcol;
+}
+
+.rightcol {
+  grid-area: rightcol;
+}
+
+.App-resume-section>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 0;
 }
